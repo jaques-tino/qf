@@ -30,19 +30,10 @@ const handleClose = (): void => {
     <div class="tino-titlebar__content" style="-webkit-app-region: no-drag">
       <slot>{{ title }}</slot>
     </div>
-    <div v-if="showBtns" class="tino-titlebar__btns tino-flex tino-flex-row">
-      <div class="tino-titlebar__btns_minimize iconfont icon-minimize" @click="handleMinimize" />
-      <div
-        v-show="!isMax"
-        class="tino-titlebar__btns_maximize iconfont icon-maximize"
-        @click="handleMax(isMax)"
-      />
-      <div
-        v-show="isMax"
-        class="tino-titlebar__btns_maximize2 iconfont icon-minimize2"
-        @click="handleMax(isMax)"
-      />
-      <div class="tino-titlebar__btns_close iconfont icon-close" @click="handleClose" />
+    <div v-if="showBtns" class="tino-titlebar__btns tino-flex tino-flex-row tino-col-center">
+      <div class="tino-titlebar__btns_maximize" @click="handleMax(isMax)" />
+      <div class="tino-titlebar__btns_minimize" @click="handleMinimize" />
+      <div class="tino-titlebar__btns_close" @click="handleClose" />
     </div>
   </div>
 </template>

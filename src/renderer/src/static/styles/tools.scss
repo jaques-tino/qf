@@ -1,3 +1,19 @@
+.light {
+  --tino-bg-color: #f5f4f7;
+  --tino-text-color: #999;
+  --tino-text-color-active: #333;
+  --tino-bg-color-active: #fff;
+  --tino-text-color-hover: rgb(218, 218, 218);
+}
+
+.dart {
+  --tino-bg-color: rgb(7, 14, 14);
+  --tino-text-color: rgb(183, 186, 196);
+  --tino-text-color-active: #fff;
+  --tino-bg-color-active: rgb(26, 30, 31);
+  --tino-text-color-hover: #fff;
+}
+
 .tino-flex {
   display: flex;
 }
@@ -8,6 +24,10 @@
 
 .tino-flex-col {
   flex-direction: column;
+}
+
+.tino-col-center {
+  align-items: center;
 }
 
 .tino-flex-space-between {

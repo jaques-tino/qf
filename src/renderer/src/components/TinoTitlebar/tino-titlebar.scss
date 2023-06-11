@@ -1,4 +1,5 @@
-$bg: rgb(7, 14, 14);
+// $bg: rgb(7, 14, 14);
+$bg: var(--tino-bg-color);
 
 .tino-titlebar {
   height: 40px;
@@ -11,23 +12,32 @@ $bg: rgb(7, 14, 14);
   .tino-titlebar__btns {
     -webkit-app-region: no-drag;
     justify-items: end;
+    margin-right: 10px;
 
     div {
-      width: 60px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
       text-align: center;
-      line-height: 40px;
-      color: #333;
+      color: var(--tino-text-color);
       background-color: $bg;
       font-size: 16px;
+      margin-right: 10px;
 
       &:hover {
         cursor: pointer;
-        background-color: rgb(208, 208, 208);
       }
 
-      &.tino-titlebar__btns_close:hover {
-        color: #fff;
-        background-color: rgb(212, 17, 35);
+      &.tino-titlebar__btns_close {
+        background-color: #ff5f57;
+      }
+
+      &.tino-titlebar__btns_maximize {
+        background-color: #32d74b;
+      }
+
+      &.tino-titlebar__btns_minimize {
+        background-color: #ffa100;
       }
     }
   }
