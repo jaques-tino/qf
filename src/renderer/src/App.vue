@@ -24,9 +24,13 @@ onMounted(() => {
           webview.addEventListener('did-change-theme-color', (event) => {
             const themeColor = event.themeColor
             if (themeColor === null) return
-            console.log(themeColor)
-            document.body.classList.add(themeColor === '#FFFFFF' ? 'light' : 'dart')
-            document.body.classList.remove(themeColor === '#FFFFFF' ? 'dart' : 'light')
+            const isLight = themeColor === '#FFFFFF'
+            document.body.classList.add(isLight ? 'light' : 'dart')
+            document.body.classList.remove(isLight ? 'dart' : 'light')
+            window.ipcRenderer.invoke('set-titlebar-overlay', {
+              color: isLight ? '#f5f4f7' : 'rgb(7, 14, 14)',
+              symbolColor: isLight ? '#999' : 'rgb(183, 186, 196)'
+            })
           })
 
           webview.addEventListener('did-navigate-in-page', (event) => {

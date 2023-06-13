@@ -29,7 +29,9 @@ function createWindow(): void {
     }
   })
 
-  mainWindow.setWindowButtonVisibility(false)
+  if (process.platform === 'darwin') {
+    mainWindow.setWindowButtonVisibility(false)
+  }
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
@@ -64,6 +66,10 @@ function createWindow(): void {
 
   ipcMain.handle('platform', () => {
     return process.platform
+  })
+
+  ipcMain.handle('set-titlebar-overlay', (_, options) => {
+    mainWindow.setTitleBarOverlay(options)
   })
 }
 
